@@ -4,6 +4,9 @@ pipeline {
             label 'roboshop' 
             }
         } 
+    environment{
+        course = "Jenkins"
+    }
         //build 
     stages {
         stage('Build') {
@@ -43,7 +46,8 @@ pipeline {
             echo 'I will always say Hello again!'
         }
         success { 
-            echo '** Sucessfully Done **'
+            echo "** Sucessfully Done **"
+            echo "Completed ${course}"
         }
         failure { 
             echo 'I will run and check the error!'
