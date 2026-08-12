@@ -14,6 +14,9 @@ pipeline {
                 script{
                     sh """
                         echo 'Building..'
+                        echo "Course - ${course}"
+                        sleep 6
+
                     """
                 }
                 
