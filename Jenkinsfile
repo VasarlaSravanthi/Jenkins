@@ -4,7 +4,7 @@ pipeline {
             label 'roboshop' 
             }
         } 
-
+        //build 
     stages {
         stage('Build') {
             steps {
@@ -35,6 +35,18 @@ pipeline {
                 }
                 
             }
+        }
+    }
+    // post build
+    post { 
+        always { 
+            echo 'I will always say Hello again!'
+        }
+        success { 
+            echo '** Sucessfully Done **'
+        }
+        failure { 
+            echo 'I will run and check the error!'
         }
     }
 }
